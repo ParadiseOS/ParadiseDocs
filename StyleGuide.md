@@ -17,7 +17,7 @@ judgement.
 3. Constants and macros should be named in `SCREAMING_SNAKE_CASE`.
 4. `struct`'s, `enum`'s and `union`'s should be named in `PascalCase`. Only the
    first character of acronyms should be captialized. For example: `GdtEntry`.
-3. Always `typedef` your `struct`'s, `enum`'s, and `union`'s.
+5. Always `typedef` your `struct`'s, `enum`'s, and `union`'s.
 
    ```c
    typedef struct {
@@ -40,7 +40,7 @@ judgement.
    } Foo;
    ```
 
-5. `enum` variants should be in `PascalCase` but should be prefixed by an enum
+6. `enum` variants should be in `PascalCase` but should be prefixed by an enum
    tag to show which enum they belong to. For example:
 
    ```c
@@ -50,6 +50,23 @@ judgement.
        err_FileNotFound,
        err_PermissionDenied,
    } Error;
+   ```
+   
+7. When creating methods for some `struct`, name them like
+   `struct_name_method_name`. For example:
+   
+   ```c
+   typedef struct {
+       u32 *data;
+       u32 length;
+       u32 capacity;
+   } ArrayList;
+   
+   u32 array_list_init(ArrayList *list);
+   u32 array_list_deinit(ArrayList *list);
+   void array_list_push(ArrayList *list, u32 data);
+   u32 array_list_pop(ArrayList *list);
+   u32 array_list_clear(ArrayList *list);
    ```
 
 Make sure your names are descriptive. Someone vaguely familar with the code base
@@ -61,7 +78,7 @@ document your code.
 ## Indentation
 
 1. Use 4-space indentation.
-2. Indent by 1 inside of blocks.
+2. Indent by one level inside of blocks.
 3. Don't indent case labels. For example:
 
    ```c
@@ -92,9 +109,10 @@ document your code.
 3. Put a space between close parentheses and open braces.
 4. For function calls and declarations, do not put a space between the identifer
    and the open parenthesis.
-5. For control flow statements, put a space after the keyword.
-6. Put a space after commas but not before.
-7. In a `for` loop header, put a space after semicolons but not before.
+5. For control flow statements, put a space between the keyword and open parenthesis.
+6. For `sizeof` and similar operators, put a space between the keyword and open parenthesis.
+7. Put a space after commas but not before.
+8. In a `for` loop header, put a space after semicolons but not before.
 
 ## Misc
 
