@@ -111,8 +111,15 @@ document your code.
    and the open parenthesis.
 5. For control flow statements, put a space between the keyword and open parenthesis.
 6. For `sizeof` and similar operators, put a space between the keyword and open parenthesis.
-7. Put a space after commas but not before.
-8. In a `for` loop header, put a space after semicolons but not before.
+7. In type casts, put a space after the close parenthesis. For example:
+
+   ```c
+   float x = 13.4;
+   u32 truncated = (u32) x;
+   ```
+
+8. Put a space after commas but not before.
+9. In a `for` loop header, put a space after semicolons but not before.
 
 ## Misc
 
